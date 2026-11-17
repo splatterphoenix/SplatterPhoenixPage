@@ -1,12 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+
+const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
 ---
 
 <BaseLayout title="Contact & Booking — Splatter Phoenix" description="Contact Splatter Phoenix for booking, shows, press, and general inquiries.">
   <PageHero eyebrow="Booking · Press · Hello" title="Get in touch" intro="Want Splatter Phoenix on the bill, in your publication, or in your town? Send the details and let’s talk." />
   <section class="shell contact-grid section-pad">
-    <div class="contact-card hot-card"><p class="eyebrow">Booking</p><h2>Put us<br />on the bill.</h2><p>Venue, date, city, lineup, and any production details help us respond faster. For this draft, booking inquiries route through the band’s official Instagram.</p><a class="button button-dark" href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Message the band ↗</a></div>
-    <div class="contact-card"><p class="eyebrow">Online</p><h2>Find the band</h2><div class="contact-links"><a href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.facebook.com/profile.php?id=61552065852237" target="_blank" rel="noreferrer">Facebook ↗</a><a href="https://www.youtube.com/@SplatterPhoenix" target="_blank" rel="noreferrer">YouTube ↗</a><a href="/press">Electronic press kit →</a></div><p class="fine-print">A dedicated booking email or contact form can replace the temporary Instagram route before launch.</p></div>
+    <div class="contact-intro"><p class="eyebrow">Booking & general inquiries</p><h2>Tell us what<br />you have in mind.</h2><p class="lead">For shows, include the venue, date, city, lineup, and production details if you have them. For everything else, just say hello.</p><div class="contact-links"><a href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="/press">Electronic press kit →</a></div></div>
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-contact-form>
+      <input type="hidden" name="access_key" value={web3FormsKey} />
+      <input type="hidden" name="subject" value="New message from the Splatter Phoenix website" />
+      <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+      <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
+      <label><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
+      <label><span>What’s this about?</span><select name="inquiry_type"><option>Booking</option><option>Press</option><option>General message</option></select></label>
+      <label><span>Message</span><textarea name="message" rows="7" required></textarea></label>
+      <button class="button button-hot" type="submit" disabled={!web3FormsKey}>Send message <span>→</span></button>
+      {!web3FormsKey && <p class="form-note">Form layout is ready. Add the Web3Forms access key to activate submissions.</p>}
+    </form>
   </section>
 </BaseLayout>

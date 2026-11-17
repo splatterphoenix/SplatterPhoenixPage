@@ -12,9 +12,8 @@ const releases = [
 <BaseLayout title="Music — Splatter Phoenix" description="Listen to releases from Richmond alternative pop punk band Splatter Phoenix.">
   <PageHero eyebrow="Turn it up" title="Music" intro="Melodic, restless, and built to be sung back. Explore the Splatter Phoenix catalog and take it with you." />
   <section class="shell release-catalog section-pad">
-    {releases.map((release, index) => (
+    {releases.map((release) => (
       <article class="catalog-card">
-        <div class="catalog-number">0{index + 1}</div>
         {release.image ? <img src={release.image} alt={`${release.title} cover art`} loading="lazy" /> : <div class={release.className}><span>SP</span></div>}
         <div class="catalog-copy">
           <p class="eyebrow">{release.type} · {release.year}</p>

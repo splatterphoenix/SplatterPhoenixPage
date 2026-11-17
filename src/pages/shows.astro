@@ -1,24 +1,38 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import { upcomingShows, pastShows } from '../data/shows';
 ---
 
 <BaseLayout title="Shows — Splatter Phoenix" description="Upcoming shows and past dates from Splatter Phoenix in Richmond, Virginia.">
   <PageHero eyebrow="See you in the room" title="Shows" intro="Sweaty rooms, loud amps, and everybody in the chorus. New dates will land here first." />
   <section class="shell shows-layout section-pad">
-    <div class="empty-show">
+    <div class="upcoming-shows">
       <p class="eyebrow">Upcoming</p>
-      <p class="huge-date">TBA</p>
-      <h2>New dates incoming.</h2>
-      <p>We’re lining up the next run of shows. Follow the band for announcements or get in touch to put Splatter Phoenix on your bill.</p>
-      <div class="button-row"><a class="button button-hot" href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Follow for dates ↗</a><a class="button button-ghost" href="/contact">Book the band</a></div>
+      {upcomingShows.length > 0 ? (
+        <div class="show-list">
+          {upcomingShows.map((show) => (
+            <article class="show-row">
+              <time datetime={show.date}>{show.displayDate}</time>
+              <div><h2>{show.venue}</h2><p>{show.city}{show.details ? ` · ${show.details}` : ''}</p></div>
+              {show.ticketUrl ? <a class="button button-hot" href={show.ticketUrl} target="_blank" rel="noreferrer">Tickets ↗</a> : <span class="show-status">Details soon</span>}
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-show">
+          <p class="huge-date">TBA</p>
+          <h2>New dates incoming.</h2>
+          <p>We’re lining up the next run of shows. Follow the band for announcements or get in touch to put Splatter Phoenix on your bill.</p>
+          <div class="button-row"><a class="button button-hot" href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Follow for dates ↗</a><a class="button button-ghost" href="/contact">Book the band</a></div>
+        </div>
+      )}
     </div>
     <aside class="past-shows">
       <p class="eyebrow">From the archive</p>
       <h2>Past noise</h2>
-      <div class="past-show"><time>Sep 19 · 2025</time><strong>Another Round Bar & Grill</strong><span>Richmond, VA</span></div>
-      <div class="past-show"><time>Jun 06 · 2025</time><strong>Bandito’s</strong><span>Richmond, VA</span></div>
-      <p class="fine-print">A fuller show archive and flyer collection will be added as dates are confirmed.</p>
+      {pastShows.map((show) => <div class="past-show"><time datetime={show.date}>{show.displayDate}</time><strong>{show.venue}</strong><span>{show.city}</span></div>)}
+      <p class="fine-print">Shows are managed in one data file, so new dates can be added without rebuilding this page.</p>
     </aside>
   </section>
 </BaseLayout>
