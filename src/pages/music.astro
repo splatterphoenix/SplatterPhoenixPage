@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+const releases = [
+  { title: 'Cute on Blaire', type: 'EP', year: '2026', className: 'release-placeholder red', copy: 'The newest chapter. Hooks forward, feelings exposed.' },
+  { title: 'Heck Yes', type: 'Single', year: '2026', className: 'release-placeholder violet', copy: 'A short, sharp answer delivered at full volume.' },
+  { title: 'No Time To Waste', type: 'EP', year: '2025', image: '/images/no-time-to-waste.png', copy: 'Five songs about memory, distance, belonging, and moving anyway.' },
+];
+---
+
+<BaseLayout title="Music — Splatter Phoenix" description="Listen to releases from Richmond alternative pop punk band Splatter Phoenix.">
+  <PageHero eyebrow="Turn it up" title="Music" intro="Melodic, restless, and built to be sung back. Explore the Splatter Phoenix catalog and take it with you." />
+  <section class="shell release-catalog section-pad">
+    {releases.map((release, index) => (
+      <article class="catalog-card">
+        <div class="catalog-number">0{index + 1}</div>
+        {release.image ? <img src={release.image} alt={`${release.title} cover art`} loading="lazy" /> : <div class={release.className}><span>SP</span></div>}
+        <div class="catalog-copy">
+          <p class="eyebrow">{release.type} · {release.year}</p>
+          <h2>{release.title}</h2>
+          <p>{release.copy}</p>
+          <div class="platform-links">
+            <a href="https://open.spotify.com/artist/6QRLxRL3nlmg09obN0sYvc" target="_blank" rel="noreferrer">Spotify ↗</a>
+            <a href="https://music.apple.com/us/artist/splatter-phoenix/1842780882" target="_blank" rel="noreferrer">Apple ↗</a>
+            <a href="https://splatterphoenix.bandcamp.com/" target="_blank" rel="noreferrer">Bandcamp ↗</a>
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

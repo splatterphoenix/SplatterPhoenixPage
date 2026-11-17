@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="About — Splatter Phoenix" description="Meet Josh, Ted, and Stephen of Richmond alternative pop punk band Splatter Phoenix.">
+  <PageHero eyebrow="Josh · Ted · Stephen" title="Built in RVA" intro="Three friends turning the volume up on memory, doubt, second chances, and every feeling that refuses to stay quiet." />
+  <section class="shell about-feature section-pad">
+    <div class="about-image"><img src="/images/band-stairs.jpg" alt="Josh, Ted, and Stephen of Splatter Phoenix in Richmond" /></div>
+    <div class="about-copy">
+      <p class="eyebrow">The short version</p>
+      <h2>Alternative pop punk from Richmond, Virginia.</h2>
+      <p class="lead">Splatter Phoenix writes hook-heavy songs with an open nerve—music shaped by friendship, restless energy, and the need to make something honest together.</p>
+      <p>The band is Josh, Ted, and Stephen. Their catalog moves between punchy immediacy and reflective singalong moments, always keeping the melody in the front row.</p>
+      <p>This is the beginning of the fuller story. Member roles, the origin of the name, and more personal detail will be developed with the band in the next content pass.</p>
+    </div>
+  </section>
+  <section class="member-strip">
+    <div class="shell member-grid">
+      {['Josh', 'Ted', 'Stephen'].map((name, i) => <article><span>0{i + 1}</span><h2>{name}</h2><p>Splatter Phoenix</p></article>)}
+    </div>
+  </section>
+</BaseLayout>

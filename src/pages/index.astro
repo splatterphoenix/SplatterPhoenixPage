@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const platforms = [
+  ['Spotify', 'https://open.spotify.com/artist/6QRLxRL3nlmg09obN0sYvc'],
+  ['Apple Music', 'https://music.apple.com/us/artist/splatter-phoenix/1842780882'],
+  ['Bandcamp', 'https://splatterphoenix.bandcamp.com/'],
+  ['YouTube', 'https://www.youtube.com/@SplatterPhoenix'],
+];
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-photo" role="img" aria-label="Splatter Phoenix in Richmond, Virginia"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-copy shell">
+      <p class="eyebrow hero-kicker">Richmond, Virginia · Alternative Pop Punk</p>
+      <img class="hero-wordmark" src="/images/splatter-phoenix-full-logo.png" alt="Splatter Phoenix" />
+      <p class="hero-line">Big hooks. Open hearts.<br />No time to waste.</p>
+      <div class="button-row">
+        <a class="button button-hot" href="/music">Listen now <span>↗</span></a>
+        <a class="button button-ghost" href="/shows">Upcoming shows</a>
+      </div>
+    </div>
+    <div class="scroll-note" aria-hidden="true">Scroll to turn it up ↓</div>
+  </section>
+
+  <div class="ticker" aria-label="Band highlights">
+    <div class="ticker-track">
+      <span>Cute on Blaire</span><i>✦</i><span>No Time To Waste</span><i>✦</i><span>RVA Pop Punk</span><i>✦</i>
+      <span>Cute on Blaire</span><i>✦</i><span>No Time To Waste</span><i>✦</i><span>RVA Pop Punk</span><i>✦</i>
+    </div>
+  </div>
+
+  <section class="release-section shell section-pad">
+    <div class="release-art-wrap reveal">
+      <span class="tape tape-a">THE RECORD</span>
+      <img class="release-art" src="/images/no-time-to-waste.png" alt="No Time To Waste by Splatter Phoenix" loading="lazy" />
+    </div>
+    <div class="release-copy reveal">
+      <p class="eyebrow">From the catalog · 2025</p>
+      <h2>No Time<br />To Waste</h2>
+      <p class="lead">Five songs built for late drives, loud rooms, and the part of the chorus everybody knows by the second time around.</p>
+      <ol class="track-list">
+        <li><span>Used To Be</span><span>02:59</span></li>
+        <li><span>Not Alone</span><span>03:33</span></li>
+        <li><span>Online Girl</span><span>02:23</span></li>
+        <li><span>Memories</span><span>03:52</span></li>
+        <li><span>Hometown</span><span>02:01</span></li>
+      </ol>
+      <div class="platform-links">
+        {platforms.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer">{label} ↗</a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto section-pad">
+    <img src="/images/phoenix-outline.png" alt="" class="manifesto-phoenix" loading="lazy" />
+    <div class="shell manifesto-grid">
+      <p class="eyebrow">Three friends · One loud idea</p>
+      <h2 class="display-wide">Songs that hit<br /><em>where it hurts.</em></h2>
+      <p class="lead">Splatter Phoenix is Josh, Ted, and Stephen—an alternative pop punk band making melodic, honest songs in Richmond, Virginia.</p>
+      <a class="text-link" href="/about">Meet the band <span>→</span></a>
+    </div>
+  </section>
+
+  <section class="live-strip section-pad shell">
+    <div class="section-head">
+      <div><p class="eyebrow">In the room</p><h2>Live & loud</h2></div>
+      <a class="text-link" href="/media">See the archive <span>→</span></a>
+    </div>
+    <div class="photo-grid">
+      <figure class="photo-card photo-tall"><img src="/images/live-drums.jpg" alt="Splatter Phoenix performing live" loading="lazy" /><figcaption>RVA · Live</figcaption></figure>
+      <figure class="photo-card"><img src="/images/live-full-band.jpg" alt="Splatter Phoenix on stage" loading="lazy" /><figcaption>Turn it up</figcaption></figure>
+      <figure class="photo-card"><img src="/images/live-guitar.jpg" alt="Guitarist performing under magenta stage lights" loading="lazy" /><figcaption>No quiet parts</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="show-callout shell section-pad">
+    <div class="show-poster">
+      <p class="eyebrow">Next up</p>
+      <p class="poster-mark">SP</p>
+      <h2>New dates<br />incoming.</h2>
+      <p>Follow along for the next Richmond show announcement.</p>
+      <a class="button button-dark" href="/shows">See shows</a>
+    </div>
+    <div class="show-photo"><img src="/images/band-city.jpg" alt="Splatter Phoenix walking through Richmond" loading="lazy" /></div>
+  </section>
+
+  <section class="final-cta section-pad">
+    <div class="shell">
+      <p class="eyebrow">Bring the noise</p>
+      <h2>Let’s make<br />a night of it.</h2>
+      <div class="button-row">
+        <a class="button button-hot" href="/contact">Book the band</a>
+        <a class="button button-ghost" href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Follow on Instagram ↗</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

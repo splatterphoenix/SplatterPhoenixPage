@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+const images = [
+  ['/images/live-full-band.jpg', 'Splatter Phoenix performing live', 'wide'],
+  ['/images/band-stairs.jpg', 'Splatter Phoenix group portrait in Richmond', 'tall'],
+  ['/images/live-drums.jpg', 'Live drums and vocals', ''],
+  ['/images/band-city.jpg', 'The band exploring Richmond', 'wide'],
+  ['/images/live-guitar.jpg', 'Guitar performance under stage lights', ''],
+  ['/images/band-rva-wide.jpg', 'Splatter Phoenix in downtown Richmond', ''],
+];
+---
+
+<BaseLayout title="Media — Splatter Phoenix" description="Official photos and live images from Splatter Phoenix.">
+  <PageHero eyebrow="Frames from the noise" title="Media" intro="Live light, Richmond streets, and the moments between songs. A growing visual archive of Splatter Phoenix." />
+  <section class="shell media-grid section-pad">
+    {images.map(([src, alt, className]) => <figure class={className}><img src={src} alt={alt} loading="lazy" /></figure>)}
+  </section>
+  <section class="shell media-note"><p>High-resolution approved press photography and photographer credits will be organized in the press kit.</p><a class="text-link" href="/press">Open press kit <span>→</span></a></section>
+</BaseLayout>

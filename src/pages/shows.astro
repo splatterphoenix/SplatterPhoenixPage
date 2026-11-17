@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Shows — Splatter Phoenix" description="Upcoming shows and past dates from Splatter Phoenix in Richmond, Virginia.">
+  <PageHero eyebrow="See you in the room" title="Shows" intro="Sweaty rooms, loud amps, and everybody in the chorus. New dates will land here first." />
+  <section class="shell shows-layout section-pad">
+    <div class="empty-show">
+      <p class="eyebrow">Upcoming</p>
+      <p class="huge-date">TBA</p>
+      <h2>New dates incoming.</h2>
+      <p>We’re lining up the next run of shows. Follow the band for announcements or get in touch to put Splatter Phoenix on your bill.</p>
+      <div class="button-row"><a class="button button-hot" href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Follow for dates ↗</a><a class="button button-ghost" href="/contact">Book the band</a></div>
+    </div>
+    <aside class="past-shows">
+      <p class="eyebrow">From the archive</p>
+      <h2>Past noise</h2>
+      <div class="past-show"><time>Sep 19 · 2025</time><strong>Another Round Bar & Grill</strong><span>Richmond, VA</span></div>
+      <div class="past-show"><time>Jun 06 · 2025</time><strong>Bandito’s</strong><span>Richmond, VA</span></div>
+      <p class="fine-print">A fuller show archive and flyer collection will be added as dates are confirmed.</p>
+    </aside>
+  </section>
+</BaseLayout>
