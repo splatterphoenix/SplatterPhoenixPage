@@ -1,0 +1,20 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<div class:list={['spotify-player', { compact }]}>
+  <iframe
+    title="Listen to Splatter Phoenix on Spotify"
+    src="https://open.spotify.com/embed/artist/6QRLxRL3nlmg09obN0sYvc?utm_source=generator&theme=0"
+    width="100%"
+    height={compact ? '352' : '452'}
+    frameborder="0"
+    allowfullscreen
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  ></iframe>
+</div>

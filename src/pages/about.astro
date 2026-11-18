@@ -4,20 +4,19 @@ import PageHero from '../components/PageHero.astro';
 ---
 
 <BaseLayout title="About — Splatter Phoenix" description="Meet Josh, Ted, and Stephen of Richmond alternative pop punk band Splatter Phoenix.">
-  <PageHero eyebrow="Josh · Ted · Stephen" title="Built in RVA" intro="Three friends turning the volume up on memory, doubt, second chances, and every feeling that refuses to stay quiet." />
+  <PageHero eyebrow="Josh · Ted · Stephen" title="We’re Splatter Phoenix" intro="Three friends making pop punk in Richmond. That’s the short version" />
   <section class="shell about-feature section-pad">
     <div class="about-image"><img src="/images/band-stairs.jpg" alt="Josh, Ted, and Stephen of Splatter Phoenix in Richmond" /></div>
     <div class="about-copy">
-      <p class="eyebrow">The short version</p>
-      <h2>Alternative pop punk from Richmond, Virginia.</h2>
-      <p class="lead">Splatter Phoenix writes hook-heavy songs with an open nerve—music shaped by friendship, restless energy, and the need to make something honest together.</p>
-      <p>The band is Josh, Ted, and Stephen. Their catalog moves between punchy immediacy and reflective singalong moments, always keeping the melody in the front row.</p>
-      <p>This is the beginning of the fuller story. Member roles, the origin of the name, and more personal detail will be developed with the band in the next content pass.</p>
+      <p class="eyebrow">The slightly longer version</p>
+      <h2>We write songs and play them loud</h2>
+      <p class="lead">Splatter Phoenix is Josh, Ted, and Stephen. We started this because we like making music together. Simple as that.</p>
+      <p>The songs are melodic, loud, and usually a little too honest. We’re based in Richmond and we’re always working on the next one.</p>
     </div>
   </section>
   <section class="member-strip">
     <div class="shell member-grid">
-      {['Josh', 'Ted', 'Stephen'].map((name) => <article><h2>{name}</h2><p>Splatter Phoenix</p></article>)}
+      {['Josh', 'Ted', 'Stephen'].map((name) => <article><h2>{name}</h2><p>In the band</p></article>)}
     </div>
   </section>
 </BaseLayout>

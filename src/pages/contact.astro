@@ -6,9 +6,9 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
 ---
 
 <BaseLayout title="Contact & Booking — Splatter Phoenix" description="Contact Splatter Phoenix for booking, shows, press, and general inquiries.">
-  <PageHero eyebrow="Booking · Press · Hello" title="Get in touch" intro="Want Splatter Phoenix on the bill, in your publication, or in your town? Send the details and let’s talk." />
+  <PageHero eyebrow="Booking · Press · Whatever" title="Talk to us" intro="Booking a show? Need something for press? Just want to say hey? Send it over" />
   <section class="shell contact-grid section-pad">
-    <div class="contact-intro"><p class="eyebrow">Booking & general inquiries</p><h2>Tell us what<br />you have in mind.</h2><p class="lead">For shows, include the venue, date, city, lineup, and production details if you have them. For everything else, just say hello.</p><div class="contact-links"><a href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="/press">Electronic press kit →</a></div></div>
+    <div class="contact-intro"><p class="eyebrow">Booking & everything else</p><h2>Tell us<br />what’s up</h2><p class="lead">For shows, send the date, city, venue, and lineup if you have them. For anything else, just say hey.</p><div class="contact-links"><a href="https://www.instagram.com/splatter_phoenix_rva/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="/press">Press kit →</a></div></div>
     <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-contact-form>
       <input type="hidden" name="access_key" value={web3FormsKey} />
       <input type="hidden" name="subject" value="New message from the Splatter Phoenix website" />
@@ -18,7 +18,7 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
       <label><span>What’s this about?</span><select name="inquiry_type"><option>Booking</option><option>Press</option><option>General message</option></select></label>
       <label><span>Message</span><textarea name="message" rows="7" required></textarea></label>
       <button class="button button-hot" type="submit" disabled={!web3FormsKey}>Send message <span>→</span></button>
-      {!web3FormsKey && <p class="form-note">Form layout is ready. Add the Web3Forms access key to activate submissions.</p>}
+      {!web3FormsKey && <p class="form-note">The form is being hooked up. For now, send us a DM on Instagram.</p>}
     </form>
   </section>
 </BaseLayout>

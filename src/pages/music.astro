@@ -1,16 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import SpotifyPlayer from '../components/SpotifyPlayer.astro';
 
 const releases = [
-  { title: 'Cute on Blaire', type: 'EP', year: '2026', className: 'release-placeholder red', copy: 'The newest chapter. Hooks forward, feelings exposed.' },
-  { title: 'Heck Yes', type: 'Single', year: '2026', className: 'release-placeholder violet', copy: 'A short, sharp answer delivered at full volume.' },
-  { title: 'No Time To Waste', type: 'EP', year: '2025', image: '/images/no-time-to-waste.png', copy: 'Five songs about memory, distance, belonging, and moving anyway.' },
+  { title: 'Cute On Blaire', type: 'EP', year: '2026', className: 'release-placeholder red', copy: 'The newest one. Four songs, no filler.' },
+  { title: 'Heck Yes', type: 'Single', year: '2026', className: 'release-placeholder violet', copy: 'Quick, loud, and exactly what the title says.' },
+  { title: 'No Time To Waste', type: 'EP', year: '2025', image: '/images/no-time-to-waste.png', copy: 'The first EP. Five songs that still hit.' },
 ];
 ---
 
 <BaseLayout title="Music — Splatter Phoenix" description="Listen to releases from Richmond alternative pop punk band Splatter Phoenix.">
-  <PageHero eyebrow="Turn it up" title="Music" intro="Melodic, restless, and built to be sung back. Explore the Splatter Phoenix catalog and take it with you." />
+  <PageHero eyebrow="Press play" title="Music" intro="EPs, singles, and everything else we’ve put out" />
+  <section class="shell music-player-block">
+    <div><p class="eyebrow">Listen here</p><h2>Pick a song</h2><p>Or open Spotify if that’s more your thing</p></div>
+    <SpotifyPlayer />
+  </section>
   <section class="shell release-catalog section-pad">
     {releases.map((release) => (
       <article class="catalog-card">
