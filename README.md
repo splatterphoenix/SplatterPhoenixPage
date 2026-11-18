@@ -29,6 +29,7 @@ The static build is written to `dist/` and is suitable for Cloudflare Pages.
 - Add, remove, or reorder show dates in `src/data/shows.ts`.
 - Add, reorder, or hide gallery images in `src/data/media.ts`.
 - Put new optimized image files in `public/images/` and reference their `/images/...` path in the media data file.
+- See `CONTENT-UPDATES.md` for the exact post-launch GitHub and Cloudflare workflow.
 
 ## Contact form
 
