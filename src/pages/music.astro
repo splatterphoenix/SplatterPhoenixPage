@@ -14,7 +14,7 @@ const releases = [
   <section class="shell release-catalog section-pad">
     {releases.map((release) => (
       <article class="catalog-card">
-        {release.image ? <img src={release.image} alt={`${release.title} cover art`} loading="lazy" /> : <div class={release.className}><span>SP</span></div>}
+        {release.image ? <img src={release.image} alt={`${release.title} cover art`} loading="lazy" /> : <div class={release.className}><img src="/images/phoenix-mark.png" alt="" /></div>}
         <div class="catalog-copy">
           <p class="eyebrow">{release.type} · {release.year}</p>
           <h2>{release.title}</h2>
