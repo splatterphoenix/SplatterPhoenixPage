@@ -95,7 +95,7 @@ h2 { font-size: clamp(3.25rem, 7.5vw, 7rem); margin-bottom: 1.35rem; }
 .home-release-art.cute-art { position: relative; display: grid; place-items: center; background: linear-gradient(145deg, #ff4a0c, #bd133f 54%, #371b59); isolation: isolate; }
 .home-release-art.cute-art::before { content: ''; position: absolute; inset: -30%; background: repeating-linear-gradient(45deg, transparent 0 12px, rgba(255,255,255,.1) 12px 22px); transform: rotate(13deg); z-index: -1; }
 .home-release-art.cute-art img { position: absolute; width: 72%; height: 72%; object-fit: contain; opacity: .26; filter: drop-shadow(0 10px 20px rgba(0,0,0,.35)); }
-.home-release-art.cute-art span { position: relative; color: #fff; font-family: var(--display); font-size: clamp(2rem, 4vw, 4rem); font-weight: 900; line-height: .8; letter-spacing: -.04em; text-transform: uppercase; text-align: center; transform: rotate(-4deg); }
+.home-release-art.cute-art span { position: relative; color: #fff; font-family: var(--display); font-size: clamp(1.05rem, 2.4vw, 2.2rem); font-weight: 900; line-height: .8; letter-spacing: -.04em; text-transform: uppercase; text-align: center; white-space: nowrap; transform: rotate(-4deg); }
 .home-release-copy h3, .listen-row h3 { margin: 0; font-family: var(--display); font-size: clamp(2.25rem, 4vw, 4rem); font-weight: 800; line-height: .88; text-transform: uppercase; }
 .mini-track-list { list-style: none; padding: 0; margin: 1.5rem 0 0; border-top: 1px solid var(--line); }
 .mini-track-list li { padding: .45rem 0; border-bottom: 1px solid var(--line); color: var(--paper-dim); font-size: .78rem; }
@@ -135,7 +135,7 @@ h2 { font-size: clamp(3.25rem, 7.5vw, 7rem); margin-bottom: 1.35rem; }
 .show-poster h2 { font-size: clamp(4rem, 8vw, 7.5rem); }
 .show-photo img { width: 100%; height: 100%; min-height: 460px; object-fit: cover; object-position: center; filter: grayscale(1) contrast(1.25); }
 .final-cta { background: linear-gradient(135deg, #361861, #0b0b0d 52%, #4a110b); border-top: 1px solid var(--line); }
-.final-cta h2 { font-size: clamp(5rem, 13vw, 12rem); }
+.final-cta h2 { font-size: clamp(4.5rem, 12vw, 11rem); white-space: nowrap; }
 
 .page-hero { padding-top: clamp(9rem, 14vw, 12rem); padding-bottom: clamp(3.75rem, 6.5vw, 6.5rem); border-bottom: 1px solid var(--line); position: relative; }
 .page-hero h1 { margin-bottom: 1.5rem; }
@@ -283,7 +283,7 @@ dd { margin: 0; font-weight: 700; }
   .member-grid h2 { font-size: clamp(1.9rem, 9vw, 2.65rem); }
   .member-grid p { font-size: .58rem; letter-spacing: .09em; }
   .home-release { grid-template-columns: 112px 1fr; padding: 1rem; gap: 1rem; }
-  .home-release-art.cute-art span { font-size: 1.75rem; }
+  .home-release-art.cute-art span { font-size: clamp(1rem, 2.8vw, 1.55rem); }
   .mini-track-list { margin-top: 1rem; }
   .mini-track-list li { font-size: .7rem; }
   .listen-row { grid-template-columns: 1fr; }
